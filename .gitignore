@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 [Pp]ackages/
+[Ll]ibrary/
 
 Assets/AssetStoreTools*
 
@@ -63,3 +64,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
