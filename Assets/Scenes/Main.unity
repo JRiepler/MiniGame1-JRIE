@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca240b5e168e4359ad3f331df4e7c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeInSec: 10
+  startTimeInSec: 30
   sceneLoader: {fileID: 1730509377}
 --- !u!1 &625402615
 GameObject:

@@ -17,7 +17,7 @@ public class Collectible : MonoBehaviour
     {
         Debug.Log("Triggerevent" + collision.gameObject.name);
 
-        if (collision.gameObject.name == "Truck")
+        if (collision.gameObject.name == "Truck" && collision.gameObject.tag == "Airdrop")
         {
             myData.scoreValue += 10;
             Destroy(gameObject, 0f);
