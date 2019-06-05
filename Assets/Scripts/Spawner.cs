@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirdropSpawn : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
-    public Airdrop airdropPrefab;
+    public GameObject prefabAirdrop;
     public GameObject boundaryLeft;
     public GameObject boundaryRight;
     public GameObject boundaryTop;
-    public GameObject flyParent;
+    public GameObject airdropParent;
     private bool spawn = true;
 
     public float minSpawnDelay = 1.0f;
@@ -16,8 +16,8 @@ public class AirdropSpawn : MonoBehaviour
 
     public int xMinLeft;
     public int xMaxLeft;
-    public float flyMinSize = 0.1f;
-    public float flyMaxSize = 0.5f;
+   // public float airdropMinSize = 0.1f;
+    public float airdropSize = 0.05f;
 
     public float flyGravityMin = 0.1f;
     public float flyGravityMax = 0.8f;
@@ -38,29 +38,23 @@ public class AirdropSpawn : MonoBehaviour
         while (spawn)
         {
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
-            SpawnAirdrop();
+            SpawnFly();
         }
 
     }
 
-    private void SpawnAirdrop()
+    private void SpawnFly()
     {
         // transform.position = new Vector3(Random.Range(xMinLeft, xMaxLeft), yPos, 0);
 
-        float dropSize = Random.Range(dropMinSize, dropMaxSize);
+       // float airdropSize = Random.Range(airdropMinSize, airdropMaxSize);
 
-        Airdrop dropClone = (Airdrop)Instantiate(airdropPrefab, transform.position, transform.rotation);
-        dropClone.transform.SetParent(dropParent.transform);
-        dropClone.transform.localPosition = new Vector3(Random.Range(xMinLeft, xMaxLeft), dropParent.transform.position.y, 0f);
-        Debug.Log("Local Scale: " + dropSize);
-        dropClone.transform.localScale = new Vector3(dropSize, dropSize, 0);
+        GameObject airdropClone = (GameObject)Instantiate(prefabAirdrop, transform.position, transform.rotation);
+        airdropClone.transform.SetParent(airdropParent.transform);
+        airdropClone.transform.localPosition = new Vector3(Random.Range(-6, +6),0, 0f);
+        Debug.Log("Local Scale: " + airdropSize);
+        airdropClone.transform.localScale = new Vector3(airdropSize, airdropSize, 0f);
         //flyClone.transform.localScale = new Vector3(1, 1, 0);
-
-        dropClone.GetComponent<SpriteRenderer>().sortingOrder = Random.Range(2, 8);
-        if (dropClone.GetComponent<SpriteRenderer>().sortingOrder == 7)
-        {
-            dropClone.GetComponent<SpriteRenderer>().color = Color.blue;
-        }
-        dropClone.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-2, 2), Random.Range(-10, -1));
+       // airdropClone.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-2, 2), Random.Range(-10, -1));
     }
 }
