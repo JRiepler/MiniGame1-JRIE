@@ -25,6 +25,7 @@ public class Countdown : MonoBehaviour
         if (time <= 0)
         {
             sceneLoader.LoadSceneOutro();
+
         }
     }
 }

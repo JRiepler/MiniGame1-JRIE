@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44050605}
   - component: {fileID: 44050604}
+  - component: {fileID: 44050606}
   m_Layer: 0
   m_Name: BottomHitbox
   m_TagString: Untagged
@@ -141,7 +142,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 144.30865, y: -391.0625}
+  m_Offset: {x: -366.4219, y: -432.46866}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -152,7 +153,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1028.9578, y: 78.57739}
+  m_Size: {x: 18.362732, y: 1.1384888}
   m_EdgeRadius: 0
 --- !u!4 &44050605
 Transform:
@@ -167,6 +168,25 @@ Transform:
   m_Father: {fileID: 1561302753}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &44050606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44050603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692d6e498727843929104eaa2357b057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myData: {fileID: 11400000, guid: 0b604ea32d7214edbb1bb5552d8934fb, type: 2}
+  scoreText: {fileID: 52579951}
+--- !u!114 &52579951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114577207646909550, guid: d1e0bfea6d0b8447fa02b7c097c96af3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1821592677}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 --- !u!1 &309644038
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +683,17 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114052708602502176, guid: f0a184725b55b4c8fb59bc35fd944f05,
+        type: 2}
+      propertyPath: myData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b604ea32d7214edbb1bb5552d8934fb,
+        type: 2}
+    - target: {fileID: 114052708602502176, guid: f0a184725b55b4c8fb59bc35fd944f05,
+        type: 2}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 52579951}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0a184725b55b4c8fb59bc35fd944f05, type: 2}
   m_IsPrefabAsset: 0
